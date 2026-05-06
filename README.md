@@ -3,7 +3,7 @@
 ## Project Overview
 
 This project builds a complete ETL pipeline for NYC Citywide Payroll Data
-containing 2.1 million records from 2014 to 2017.
+containing 2.1 million records from 2014 to 2018.
 
 ---
 

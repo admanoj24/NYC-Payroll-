@@ -7,12 +7,12 @@
 <img src="https://img.shields.io/badge/Apache_Airflow-017CEE?style=for-the-badge&logo=Apache%20Airflow&logoColor=white"/>
 <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
 <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
-<img src="https://img.shields.io/badge/Years-2014--2017-orange?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/Years-2014--2018-orange?style=for-the-badge"/>
 
 <br/>
 <br/>
 
-> **An end-to-end ETL pipeline** that ingests, transforms, and warehouses 2.1 million records of NYC employee payroll data into a star-schema data warehouse — orchestrated with Apache Airflow.
+> **An end-to-end ETL pipeline** that ingests, transforms, and warehouses 2.1 million records of NYC employee payroll data (2014–2017 full load + 2018 incremental) into a star-schema data warehouse — orchestrated with Apache Airflow.
 
 </div>
 
@@ -41,7 +41,7 @@ This project builds a **production-ready ETL data pipeline** for NYC Citywide Pa
 | 📁 Source | NYC Open Data — Citywide Payroll |
 | 🗄️ Database | PostgreSQL |
 | 🔢 Total Records | 2,194,488 |
-| 📅 Years Covered | 2014 – 2017 |
+| 📅 Years Covered | 2014 – 2017 (Full Load) + 2018 (Incremental) |
 | 🧱 Architecture | Medallion (Raw → Staging → Warehouse) |
 | 🌐 Orchestration | Apache Airflow (Dockerized) |
 
@@ -229,7 +229,7 @@ WAREHOUSE layer loaded successfully
 | 🏢 Highest Paid Role | Pension Investment Advisor, Office of the Comptroller |
 | 🏫 Largest Agency | **DEPT OF ED** — 423,338 employees |
 | 📍 Most Common Work Location | **Manhattan** |
-| 📈 Salary Trend | Increased every year from 2014 → 2017 |
+| 📈 Salary Trend | Increased every year from 2014 → 2018 |
 
 ### 📊 Summary KPIs
 

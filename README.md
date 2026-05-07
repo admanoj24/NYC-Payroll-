@@ -160,13 +160,13 @@ nyc_payroll/
 ┌──────────────────────────────────────────────────────────────┐
 │                        ETL PIPELINE                          │
 │                                                              │
-│  📥 EXTRACT         🔄 TRANSFORM          📤 LOAD           │
-│  ─────────          ───────────          ──────             │
-│  CSV File     →    Remove $ signs   →   dim tables first    │
-│  2.1M rows         Type casting          fact table last    │
-│  TEXT only         NULL handling         Referential        │
+│  📥 EXTRACT         🔄 TRANSFORM          📤 LOAD           |
+│  ─────────          ───────────          ──────              │
+│  CSV File     →    Remove $ signs   →   dim tables first     │
+│  2.1M rows         Type casting          fact table last     │
+│  TEXT only         NULL handling         Referential         │
 │                    Dedup (DISTINCT)       integrity          │
-│                    TRIM spaces           maintained         │
+│                    TRIM spaces           maintained          │
 └──────────────────────────────────────────────────────────────┘
 ```
 

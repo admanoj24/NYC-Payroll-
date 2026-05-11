@@ -191,7 +191,7 @@ nyc_payroll/
 | Apache Airflow | Pipeline orchestration |
 | Docker | Airflow containerization |
 | pgAdmin | Database management |
-| pandas | Data profiling |
+| Data profiling|
 
 ---
 
@@ -200,7 +200,7 @@ nyc_payroll/
 ### 1️⃣ Prerequisites
 
 ```bash
-pip install psycopg2 pandas
+pip install psycopg2 
 ```
 
 ### 2️⃣ Setup Database

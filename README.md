@@ -191,7 +191,7 @@ nyc_payroll/
 | Apache Airflow | Pipeline orchestration |
 | Docker | Airflow containerization |
 | pgAdmin | Database management |
-| Data profiling|
+
 
 ---
 

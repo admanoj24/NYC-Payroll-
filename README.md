@@ -36,7 +36,6 @@
 
 This project builds a **production-ready ETL data pipeline** for NYC Citywide Payroll data. It follows the **Medallion Architecture** (Raw → Staging → Warehouse) and uses a **Star Schema** optimized for fast analytical queries.
 
-<<<<<<< HEAD
 | Property | Value |
 |---|---|
 | 📁 Source | NYC Open Data — Citywide Payroll (Kaggle) |
@@ -45,16 +44,6 @@ This project builds a **production-ready ETL data pipeline** for NYC Citywide Pa
 | 📅 Years Covered | 2014 – 2018 (Full Load: 2014–2017 + Incremental: 2018) |
 | 🧱 Architecture | Medallion (Raw → Staging → Warehouse) |
 | 🌐 Orchestration | Apache Airflow (Dockerized) |
-=======
-| Property         | Value                                                  |
-| ---------------- | ------------------------------------------------------ |
-| 📁 Source        | NYC Open Data — Citywide Payroll (Kaggle)              |
-| 🗄️ Database      | PostgreSQL                                             |
-| 🔢 Total Records | 2,194,488                                              |
-| 📅 Years Covered | 2014 – 2018 (Full Load: 2014–2017 + Incremental: 2018) |
-| 🧱 Architecture  | Medallion (Raw → Staging → Warehouse)                  |
-| 🌐 Orchestration | Apache Airflow (Dockerized)                            |
->>>>>>> 932a3d7 (added ppt & doc)
 
 ---
 
@@ -62,15 +51,9 @@ This project builds a **production-ready ETL data pipeline** for NYC Citywide Pa
 
 <div align="center">
 
-<<<<<<< HEAD
 | 💼 Total Employees | 💰 Total Payroll Cost | 📊 Avg Base Salary | ⏱️ Total OT Hours |
 |:---:|:---:|:---:|:---:|
 | **798,137** | **$117 Billion** | **$41,100** | **145 Million hrs** |
-=======
-| 💼 Total Employees | 💰 Total Payroll Cost | 📊 Avg Base Salary |  ⏱️ Total OT Hours  |
-| :----------------: | :-------------------: | :----------------: | :-----------------: |
-|    **798,137**     |   **$117 Billion**    |    **$41,100**     | **145 Million hrs** |
->>>>>>> 932a3d7 (added ppt & doc)
 
 </div>
 
@@ -132,7 +115,6 @@ nyc_payroll/
 
 ## 🧹 Data Profiling Findings
 
-<<<<<<< HEAD
 | Column | Issue Found | Action Taken |
 |---|---|---|
 | `Mid Init` | 890,008 NULLs (40.56%) | Kept as NULL (optional field) |
@@ -141,16 +123,6 @@ nyc_payroll/
 | `Salary Columns` | Contains `$` signs | Removed using `REPLACE()` |
 | `Pay Basis` | Leading whitespace | Fixed using `TRIM()` |
 | `Duplicates` | 13 duplicate records | Removed using `SELECT DISTINCT` |
-=======
-| Column              | Issue Found            | Action Taken                    |
-| ------------------- | ---------------------- | ------------------------------- |
-| `Mid Init`          | 890,008 NULLs (40.56%) | Kept as NULL (optional field)   |
-| `Work Location`     | 506,214 NULLs (23.07%) | Replaced with `'UNKNOWN'`       |
-| `Last / First Name` | ~950 NULLs             | Replaced with `'UNKNOWN'`       |
-| `Salary Columns`    | Contains `$` signs     | Removed using `REPLACE()`       |
-| `Pay Basis`         | Leading whitespace     | Fixed using `TRIM()`            |
-| `Duplicates`        | 13 duplicate records   | Removed using `SELECT DISTINCT` |
->>>>>>> 932a3d7 (added ppt & doc)
 
 > 🔍 Run `profiling/profiling.sql` in pgAdmin for the complete data profiling report.
 
@@ -200,27 +172,17 @@ nyc_payroll/
 └──────────────────────────────────────────────────────────────┘
 ```
 
-<<<<<<< HEAD
 | Phase | Source | Destination | Key Operations |
 |---|---|---|---|
 | **Extract** | CSV (2.1M rows) | `raw.raw_nyc_payroll` | Load as TEXT, no transforms |
 | **Transform** | Raw layer | `stg.stg_nyc_payroll` | Type casting, NULL handling, dedup, cleaning |
 | **Load** | Staging layer | Final warehouse tables | Star schema load, referential integrity |
 | **Incremental** | New CSV files | Warehouse | Batch tracking, ON CONFLICT DO NOTHING |
-=======
-| Phase           | Source          | Destination            | Key Operations                               |
-| --------------- | --------------- | ---------------------- | -------------------------------------------- |
-| **Extract**     | CSV (2.1M rows) | `raw.raw_nyc_payroll`  | Load as TEXT, no transforms                  |
-| **Transform**   | Raw layer       | `stg.stg_nyc_payroll`  | Type casting, NULL handling, dedup, cleaning |
-| **Load**        | Staging layer   | Final warehouse tables | Star schema load, referential integrity      |
-| **Incremental** | New CSV files   | Warehouse              | Batch tracking, ON CONFLICT DO NOTHING       |
->>>>>>> 932a3d7 (added ppt & doc)
 
 ---
 
 ## 🛠️ Technologies Used
 
-<<<<<<< HEAD
 | Tool | Purpose |
 |---|---|
 | Python | ETL pipeline development |
@@ -230,17 +192,6 @@ nyc_payroll/
 | Docker | Airflow containerization |
 | pgAdmin | Database management |
 
-=======
-| Tool           | Purpose                      |
-| -------------- | ---------------------------- |
-| Python         | ETL pipeline development     |
-| PostgreSQL     | Data warehouse storage       |
-| psycopg2       | Python-PostgreSQL connection |
-| Apache Airflow | Pipeline orchestration       |
-| Docker         | Airflow containerization     |
-| pgAdmin        | Database management          |
->>>>>>> 932a3d7 (added ppt & doc)
-
 ---
 
 ## 🚀 How to Run
@@ -248,11 +199,7 @@ nyc_payroll/
 ### 1️⃣ Prerequisites
 
 ```bash
-<<<<<<< HEAD
-pip install psycopg2 
-=======
 pip install psycopg2
->>>>>>> 932a3d7 (added ppt & doc)
 ```
 
 ### 2️⃣ Setup Database
@@ -316,7 +263,6 @@ Run queries one by one
 
 ### 🏆 Top Findings
 
-<<<<<<< HEAD
 | Insight | Detail |
 |---|---|
 | 👑 Highest Paid Employee | **Scott Evans** — $350,000/yr |
@@ -325,16 +271,6 @@ Run queries one by one
 | 📍 Most Common Location | **Manhattan** — 534,697 employees |
 | 📈 Salary Trend | Increased every year from 2014 → 2018 |
 | ⏱️ Most OT | NYPD has highest overtime hours |
-=======
-| Insight                  | Detail                                                |
-| ------------------------ | ----------------------------------------------------- |
-| 👑 Highest Paid Employee | **Scott Evans** — $350,000/yr                         |
-| 🏢 Highest Paid Role     | Pension Investment Advisor, Office of the Comptroller |
-| 🏫 Largest Agency        | **DEPT OF ED** — 423,338 employees                    |
-| 📍 Most Common Location  | **Manhattan** — 534,697 employees                     |
-| 📈 Salary Trend          | Increased every year from 2014 → 2018                 |
-| ⏱️ Most OT               | NYPD has highest overtime hours                       |
->>>>>>> 932a3d7 (added ppt & doc)
 
 ### 📊 Summary KPIs
 
@@ -366,7 +302,6 @@ docker compose up -d
 
 ### Access the Airflow UI
 
-<<<<<<< HEAD
 | Setting | Value |
 |---|---|
 | 🌐 URL | `http://localhost:8080` |
@@ -384,25 +319,6 @@ docker compose up -d
 | Task 3 | `load_warehouse_layer` — Load star schema |
 | Task 4 | `incremental_load` — Load new records only |
 | Task Flow | `extract → transform → load → incremental` |
-=======
-| Setting     | Value                   |
-| ----------- | ----------------------- |
-| 🌐 URL      | `http://localhost:8080` |
-| 👤 Username | `airflow`               |
-| 🔑 Password | `airflow`               |
-
-### DAG Overview
-
-| Property  | Value                                         |
-| --------- | --------------------------------------------- |
-| DAG ID    | `nyc_payroll_pipeline`                        |
-| Schedule  | `@daily` (runs every midnight automatically)  |
-| Task 1    | `extract_raw_layer` — Load CSV to raw table   |
-| Task 2    | `transform_stg_layer` — Clean data in staging |
-| Task 3    | `load_warehouse_layer` — Load star schema     |
-| Task 4    | `incremental_load` — Load new records only    |
-| Task Flow | `extract → transform → load → incremental`    |
->>>>>>> 932a3d7 (added ppt & doc)
 
 ### Stop Airflow
 
